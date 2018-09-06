@@ -1,0 +1,11 @@
+C:\Users\Administrator\source\repos\zuoye\zuoye\bin\Debug\zuoye.exe.config
+C:\Users\Administrator\source\repos\zuoye\zuoye\bin\Debug\zuoye.exe
+C:\Users\Administrator\source\repos\zuoye\zuoye\bin\Debug\zuoye.pdb
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.csprojAssemblyReference.cache
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Properties.Resources.resources
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.csproj.GenerateResource.cache
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.exe
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.pdb
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Form1.resources
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Form2.resources
