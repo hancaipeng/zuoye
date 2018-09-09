@@ -28,7 +28,9 @@ namespace zuoye
             this.textBox5.Text = str[4];
             this.textBox6.Text = str[5];
             this.textBox7.Text = str[6];
-          
+            this.dateTimePicker1.Value =DateTime.Parse(str[7]);
+
+
             this.textBox9.Text = str[8];
           
             this.textBox11.Text = str[10];
@@ -129,7 +131,7 @@ namespace zuoye
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+          
            
             string box1 = "";
             string box2 = "";
@@ -149,10 +151,103 @@ namespace zuoye
             }
             filecz fi = new filecz();
             fi.updateXml(textBox1.Text, box1, textBox3.Text, textBox4.Text, textBox5.Text, textBox6.Text, textBox7.Text, textBox2.Text, textBox9.Text, box2, textBox11.Text, textBox12.Text, textBox13.Text);
+            this.Close();
+            MessageBox.Show("更新成功");
+            
 
             }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox5_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox6_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox9_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox11_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox12_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }

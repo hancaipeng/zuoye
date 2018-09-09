@@ -1,52 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace zuoye
 {
     class filecz
     {
+
      
-        
-        string path = @"C:\Users\Administrator\source\repos\zuoye\zuoye\file.xml";
-
-        public List<String> getFromXml()
-
-        {
-            file fi = new file();
-            List<string> list = new List<string>();
-            XmlDocument xmlDoc = new XmlDocument();
-            xmlDoc.Load(path);
-            XmlNodeList topM = xmlDoc.DocumentElement.ChildNodes;
-            XmlNode node;
-            node = xmlDoc.SelectSingleNode("file/sj/id");
-            fi.Id = int.Parse(node.InnerText);
-            node = xmlDoc.SelectSingleNode("file/sj/yx");
-           // fi.Yx = int.Parse(node.InnerText);
-
-
-            XmlNodeList nodelist = xmlDoc.SelectNodes("//sj");
-            if (nodelist.Count > 0)
-            {
-
-                foreach (XmlElement el in nodelist) 
-                {
-                    list.Add(el.GetElementsByTagName("id")[0].InnerText);
-                }
-            }
-
-
-
-            return list;
-
-
-        }
         public List<file> getXml(string file)
         {
-            List<file> fil = new List<file>();
+            Program.fill = new List<file>();
             XmlDocument doc = new XmlDocument();
             doc.Load(file);  //加载Xml文件 
             XmlElement rootElem = doc.DocumentElement;  //获取根节点
@@ -67,43 +37,83 @@ namespace zuoye
                 fi.Qrz= node.SelectSingleNode("qrz").InnerText;
                 fi.Qr = DateTime.Parse(node.SelectSingleNode("qrr").InnerText);
                 fi.Gx = DateTime.Parse(node.SelectSingleNode("gx").InnerText);
-                fil.Add(fi);
+                Program.fill.Add(fi);
               
             }
-            return fil;
+            return Program.fill;
         }
 
-        public void updateXml(string id, string yx, string fl, string xx, string pl, string fj,string user,string date,string zyz, string zt,string qrz,string qr,string gx)
+        public void saveXml()
         {
             XmlDocument doc = new XmlDocument();
-
-            doc.Load(Program.mypath);  //加载Xml文件 
-            XmlElement rootElem = doc.DocumentElement;  //获取根节点
-            XmlNodeList RowpersonNodes = rootElem.GetElementsByTagName("sj"); //获取行节点数组 
-            foreach (XmlNode node in RowpersonNodes)
-            {
-                if (node.SelectSingleNode("id").InnerText == id)
-                {
-                    node.SelectSingleNode("gx").InnerText = gx;
-                    node.SelectSingleNode("yx").InnerText = yx;
-                    node.SelectSingleNode("fl").InnerText = fl;
-                    node.SelectSingleNode("xx").InnerText = xx;
-                    node.SelectSingleNode("pl").InnerText = pl;
-                    node.SelectSingleNode("fj").InnerText = fj;
-                    node.SelectSingleNode("user").InnerText = user;
-                    node.SelectSingleNode("date").InnerText = date;
-                    node.SelectSingleNode("zyz").InnerText = zyz;
-                    node.SelectSingleNode("zt").InnerText = zt;
-                    node.SelectSingleNode("qrz").InnerText = qrz;
-                    node.SelectSingleNode("qrr").InnerText = qr;
-
-                }
-            }
+            doc.AppendChild(doc.CreateXmlDeclaration("1.0", "utf-8", ""));
+            XmlElement one = doc.CreateElement("file");   
+            doc.AppendChild(one);
+            XmlElement two = doc.CreateElement("sj");
+            one.AppendChild(two);
+          
             doc.Save(Program.mypath);
         }
 
-    }
+        public void updateXml(string id, string yx, string fl, string xx, string pl, string fj, string user, string date, string zyz, string zt, string qrz, string qr, string gx)
+        {
+            foreach(file x in Program.fill)
+            {
+                if (x.Id == int.Parse(id))
+                {
+                    x.Yx = yx;
+                    x.Fl = fl;
+                    x.Xx = xx;
+                    x.Pl = pl;
+                    x.Fj = fj;
+                    x.User = user;
+                    x.Date = DateTime.Parse(date);
+                    x.Zyz = zyz;
+                    x.Zt = zt;
+                    x.Qrz = qrz;
+                    x.Qr = DateTime.Parse(qr);
+                    x.Gx = DateTime.Parse(gx);
 
+                }
+            }
+            
+        }
+
+        public void addxml(string id, string yx, string fl, string xx, string pl, string fj, string user, string date, string zyz, string zt, string qrz, string qr, string gx)
+        {
+            file fi = new file();
+            fi.Id = int.Parse(id);
+            fi.Yx = yx;
+            fi.Fl = fl;
+            fi.Xx = xx;
+            fi.Pl = pl;
+            fi.Fj = fj;
+            fi.User =user;
+            fi.Date = DateTime.Parse(date);
+            fi.Zyz = zyz;
+            fi.Zt = zt;
+            fi.Qrz = qrz;
+            fi.Qr = DateTime.Parse(qr);
+            fi.Gx = DateTime.Parse(gx);
+            Program.fill.Add(fi);
+        }
+        public void deletexml(string id)
+        {
+          for(int i=Program.fill.Count-1; i >= 0; i--)
+            {
+                if (Program.fill[i].Id == int.Parse(id))
+                {
+                    Program.fill.Remove(Program.fill[i]);
+                }
+            }
+        }
+        public List<file> fii()
+        {
+            return Program.fill;
+        }
+
+    }
+   
 
 
     }

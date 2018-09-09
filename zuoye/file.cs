@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace zuoye
 {
-    class file
+  public   class file
     {
         int id;
         string yx;

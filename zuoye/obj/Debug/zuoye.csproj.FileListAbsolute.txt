@@ -9,3 +9,4 @@ C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.exe
 C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.pdb
 C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Form1.resources
 C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Form2.resources
+C:\Users\Administrator\source\repos\zuoye\zuoye\obj\Debug\zuoye.Form3.resources

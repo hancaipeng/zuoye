@@ -11,6 +11,7 @@ using System.Xml;
 
 namespace zuoye
 {
+
     public partial class Form1 : Form
     {
 
@@ -48,8 +49,7 @@ namespace zuoye
         {
             listView1.Items.Clear();
             List<file> ff = new List<file>();
-            ff = cz.getXml(Program.mypath);
-
+            ff = cz.fii();
             foreach (file x in ff)
             {
                 ListViewItem lvi = new ListViewItem();//开辟行数据空间
@@ -74,14 +74,20 @@ namespace zuoye
         private void button2_Click(object sender, EventArgs e)
         {
             Form2 fm = new Form2();
-            int a = listView1.FocusedItem.Index;//获取当前选择项索引
-            for (int i = 0; i < 13; i++)
+            try
             {
-                fm.str[i] = this.listView1.Items[a].SubItems[i].Text;
+                int a = listView1.FocusedItem.Index;
+                for (int i = 0; i < 13; i++)
+                {
+                    fm.str[i] = this.listView1.Items[a].SubItems[i].Text;
+                }
+                fm.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("请选中一组数据");
             }
 
-            fm.ShowDialog();
-           
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -96,7 +102,7 @@ namespace zuoye
 
         private void 保存ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+            cz.saveXml();
         }
 
 
@@ -146,7 +152,47 @@ namespace zuoye
             }
 
         }
-      
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form3 fm = new Form3();
+            fm.ShowDialog();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int a = listView1.FocusedItem.Index;
+            string b=this.listView1.Items[a].SubItems[0].Text;
+            cz.deletexml(b);
+            MessageBox.Show("删除成功");
+            listView1.Items.Clear();
+            List<file> ff = new List<file>();
+            ff = cz.fii();
+            foreach (file x in ff)
+            {
+                ListViewItem lvi = new ListViewItem();//开辟行数据空间
+                lvi.SubItems[0].Text = x.Id.ToString();
+                lvi.SubItems.Add(x.Yx);
+                lvi.SubItems.Add(x.Fl);
+                lvi.SubItems.Add(x.Xx);
+                lvi.SubItems.Add(x.Pl);
+                lvi.SubItems.Add(x.Fj);
+                lvi.SubItems.Add(x.User);
+                lvi.SubItems.Add(x.Date.ToString("d"));
+                lvi.SubItems.Add(x.Zyz);
+                lvi.SubItems.Add(x.Zt);
+                lvi.SubItems.Add(x.Qrz);
+                lvi.SubItems.Add(x.Qr.ToString("d"));
+                lvi.SubItems.Add(x.Gx.ToString("d"));
+                listView1.Items.Add(lvi);
+            }
+
+        }
+
+        private void 文件ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
    

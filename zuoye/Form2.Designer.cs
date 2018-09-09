@@ -58,6 +58,7 @@ namespace zuoye
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@ namespace zuoye
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(640, 144);
+            this.textBox2.Location = new System.Drawing.Point(640, 141);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 21);
             this.textBox2.TabIndex = 1;
@@ -92,6 +93,7 @@ namespace zuoye
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 21);
             this.textBox4.TabIndex = 3;
+            this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // textBox5
             // 
@@ -99,6 +101,7 @@ namespace zuoye
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(100, 21);
             this.textBox5.TabIndex = 4;
+            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // textBox6
             // 
@@ -106,6 +109,7 @@ namespace zuoye
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(100, 21);
             this.textBox6.TabIndex = 5;
+            this.textBox6.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // textBox7
             // 
@@ -121,6 +125,7 @@ namespace zuoye
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(100, 21);
             this.textBox9.TabIndex = 8;
+            this.textBox9.TextChanged += new System.EventHandler(this.textBox9_TextChanged_1);
             // 
             // textBox11
             // 
@@ -128,6 +133,7 @@ namespace zuoye
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(100, 21);
             this.textBox11.TabIndex = 10;
+            this.textBox11.TextChanged += new System.EventHandler(this.textBox11_TextChanged);
             // 
             // textBox12
             // 
@@ -135,6 +141,7 @@ namespace zuoye
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(100, 21);
             this.textBox12.TabIndex = 11;
+            this.textBox12.TextChanged += new System.EventHandler(this.textBox12_TextChanged);
             // 
             // textBox13
             // 
@@ -142,6 +149,7 @@ namespace zuoye
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(100, 21);
             this.textBox13.TabIndex = 12;
+            this.textBox13.TextChanged += new System.EventHandler(this.textBox13_TextChanged);
             // 
             // checkedListBox1
             // 
@@ -166,6 +174,7 @@ namespace zuoye
             this.label1.Size = new System.Drawing.Size(17, 12);
             this.label1.TabIndex = 14;
             this.label1.Text = "NO\r\n";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -175,6 +184,7 @@ namespace zuoye
             this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 15;
             this.label2.Text = "优先度";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -184,6 +194,7 @@ namespace zuoye
             this.label3.Size = new System.Drawing.Size(29, 12);
             this.label3.TabIndex = 16;
             this.label3.Text = "分类";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -213,6 +224,7 @@ namespace zuoye
             this.label6.Size = new System.Drawing.Size(77, 12);
             this.label6.TabIndex = 19;
             this.label6.Text = "预定完成日期";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label7
             // 
@@ -222,6 +234,7 @@ namespace zuoye
             this.label7.Size = new System.Drawing.Size(41, 12);
             this.label7.TabIndex = 20;
             this.label7.Text = "操作者";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
@@ -241,6 +254,7 @@ namespace zuoye
             this.label9.Size = new System.Drawing.Size(29, 12);
             this.label9.TabIndex = 22;
             this.label9.Text = "状态";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
             // 
             // label10
             // 
@@ -250,6 +264,7 @@ namespace zuoye
             this.label10.Size = new System.Drawing.Size(41, 12);
             this.label10.TabIndex = 23;
             this.label10.Text = "作业者";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label11
             // 
@@ -259,6 +274,7 @@ namespace zuoye
             this.label11.Size = new System.Drawing.Size(41, 12);
             this.label11.TabIndex = 24;
             this.label11.Text = "确认者";
+            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label12
             // 
@@ -268,6 +284,7 @@ namespace zuoye
             this.label12.Size = new System.Drawing.Size(41, 12);
             this.label12.TabIndex = 25;
             this.label12.Text = "更新日";
+            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // checkedListBox2
             // 
@@ -291,6 +308,7 @@ namespace zuoye
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label13);
             this.groupBox1.Controls.Add(this.checkedListBox2);
@@ -320,7 +338,7 @@ namespace zuoye
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Location = new System.Drawing.Point(1, 5);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(808, 597);
+            this.groupBox1.Size = new System.Drawing.Size(849, 597);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -344,6 +362,15 @@ namespace zuoye
             this.label13.Size = new System.Drawing.Size(41, 12);
             this.label13.TabIndex = 28;
             this.label13.Text = "确认日";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(390, 385);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 21);
+            this.dateTimePicker1.TabIndex = 30;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // Form2
             // 
@@ -390,5 +417,6 @@ namespace zuoye
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

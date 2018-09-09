@@ -9,6 +9,7 @@ namespace zuoye
     static class Program
     {
         public static string mypath { get; set; }
+        public static List<file> fill { get; set; }
         /// <summary>
         /// 应用程序的主入口点。
         /// </summary>
@@ -20,9 +21,7 @@ namespace zuoye
            Application.EnableVisualStyles();
              Application.SetCompatibleTextRenderingDefault(false);
              Application.Run(new Form1());
-            List<String> ls = new List<string>();
-            filecz cz = new filecz();
-            ls  = cz.getFromXml();
+          
 
         }
     }
